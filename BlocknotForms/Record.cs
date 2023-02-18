@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlocknotForms
 {
-    internal class Record
+    public class Record
     {
         public string Name { get; set; }
         public string Phone { get; set; }

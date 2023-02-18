@@ -15,17 +15,14 @@ namespace BlocknotForms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            records.Add(new Record()
+            FormAddRecord formAddRecord = new FormAddRecord();
+            if (formAddRecord.ShowDialog() == DialogResult.OK)
             {
-                Name = this.txtName.Text,
-                Phone = this.txtPhone.Text,
-            });
+                Record record = formAddRecord.Record;
 
-            UpdateListBox(this.records);
-
-            this.txtName.Text = this.txtPhone.Text = "";
-
-            this.txtName.Focus();
+                this.records.Add(record);
+                UpdateListBox(this.records);
+            }
         }
 
         void UpdateListBox(IEnumerable<Record> records)
